@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
+import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.example.modularizationapp.databinding.FragmentBlankBinding
 import com.example.mylibrary.ui.MainLibrary
@@ -48,10 +50,16 @@ class BlankFragment : Fragment() {
 
             startActivity(intent)
         }
-        binding.buttonPokedes.setOnClickListener {
+     /*   binding.buttonPokedes.setOnClickListener {
             val navController = findNavController()
 
             navController.navigate(R.id.action_blankFragment_to_nav_graph)
+        }*/
+        binding.buttonPokedes.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("pokedex://home_pokedex".toUri())
+                .build()
+            findNavController().navigate(request)
         }
         // Inflate the layout for this fragment
         return view
