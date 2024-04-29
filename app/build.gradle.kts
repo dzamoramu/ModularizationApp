@@ -56,8 +56,15 @@ dependencies {
     implementation(libs.annotationProcessor)
     //noinspection GradlePath
     implementation(files("../lib/pokedexlibrary-debug.aar"))
+    implementation(files("../lib/mylibrary-debug.aar"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.coil)
+
+    implementation(libs.retrofitConverter)
+    implementation(libs.okhttp)
+
     //noinspection GradlePath
 }

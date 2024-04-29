@@ -1,10 +1,14 @@
 package com.example.modularizationapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.modularizationapp.databinding.FragmentBlankBinding
+import com.example.mylibrary.ui.MainLibrary
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +24,8 @@ class BlankFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding: FragmentBlankBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +39,22 @@ class BlankFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        _binding = FragmentBlankBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+
+        binding.buttonMovies.setOnClickListener {
+            val intent = Intent(container?.context, MainLibrary::class.java)
+
+            startActivity(intent)
+        }
+        binding.buttonPokedes.setOnClickListener {
+            val navController = findNavController()
+
+            navController.navigate(R.id.action_blankFragment_to_nav_graph)
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+        return view
     }
 
     companion object {

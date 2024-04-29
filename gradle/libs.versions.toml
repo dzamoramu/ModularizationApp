@@ -16,6 +16,9 @@ hiltversion = "2.44"
 retrofit = "2.9.0"
 coroutines = "1.6.4"
 glide = "4.11.0"
+coilVersion = "1.4.0"
+retrofitVersion = "2.9.0"
+okhttpVersion = "4.9.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +37,9 @@ gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref 
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 annotationProcessor = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coilVersion" }
+retrofitConverter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttpVersion" }
 
 
 [plugins]
