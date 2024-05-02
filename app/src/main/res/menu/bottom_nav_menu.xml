@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/Movies"
+        android:title="Movies"
+        android:icon="@drawable/baseline_movie_24"/>
+
+    <item
+        android:id="@+id/Pokedex"
+        android:title="Pokedex"
+        android:icon="@drawable/baseline_blur_circular_24"/>
+
+</menu>

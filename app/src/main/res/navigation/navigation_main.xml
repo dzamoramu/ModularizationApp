@@ -5,12 +5,18 @@
     android:id="@+id/navigation_main"
     app:startDestination="@id/blankFragment">
 
+    <include app:graph="@navigation/nav_graph" />
+
     <fragment
         android:id="@+id/blankFragment"
         android:name="com.example.modularizationapp.BlankFragment"
         android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action android:id="@+id/deepLinkPokedex"/>
-    </fragment>
-    <include app:graph="@navigation/nav_graph"/>
+        tools:layout="@layout/fragment_blank"/>
+
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.modularizationapp.BlankFragment2"
+        android:label="fragment_blank_2"
+        tools:layout="@layout/fragment_blank2" />
+
 </navigation>

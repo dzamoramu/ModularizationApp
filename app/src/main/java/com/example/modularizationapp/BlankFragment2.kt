@@ -1,6 +1,5 @@
 package com.example.modularizationapp
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +8,7 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
-import com.example.modularizationapp.databinding.FragmentBlankBinding
-import com.example.mylibrary.ui.MainLibrary
+import com.example.modularizationapp.databinding.FragmentBlank2Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,14 +17,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [BlankFragment.newInstance] factory method to
+ * Use the [BlankFragment2.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BlankFragment : Fragment() {
+class BlankFragment2 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding: FragmentBlankBinding? = null
+    private var _binding: FragmentBlank2Binding? = null
+
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,25 +38,10 @@ class BlankFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentBlankBinding.inflate(inflater, container, false)
+        _binding = FragmentBlank2Binding.inflate(inflater, container, false)
         val view = binding.root
-
-
-        binding.buttonMovies.setOnClickListener {
-            val intent = Intent(container?.context, MainLibrary::class.java)
-
-            startActivity(intent)
-        }
-
-        binding.buttonPokedes.setOnClickListener {
-            val request = NavDeepLinkRequest.Builder
-                .fromUri("pokedex://home_pokedex".toUri())
-                .build()
-            findNavController().navigate(request)
-        }
-        // Inflate the layout for this fragment
         return view
     }
 
@@ -68,12 +52,12 @@ class BlankFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment BlankFragment.
+         * @return A new instance of fragment BlankFragment2.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BlankFragment().apply {
+            BlankFragment2().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
