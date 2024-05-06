@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.modularizationapp.databinding.FragmentBlankBinding
 import com.example.mylibrary.ui.MainLibrary
 
@@ -28,7 +30,7 @@ class BlankFragment : Fragment() {
     private var param2: String? = null
     private var _binding: FragmentBlankBinding? = null
     private val binding get() = _binding!!
-
+    private val args: BlankFragmentArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,22 +46,32 @@ class BlankFragment : Fragment() {
         _binding = FragmentBlankBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        if (!args.infoDetail.isNullOrEmpty()) {
+            // Si el argumento está presente y no está vacío, mostrarlo en la vista
+            binding.textDataResult.text = args.infoDetail
+        } else {
+            // Si el argumento no está presente o está vacío, mostrar un mensaje alternativo
+            binding.textDataResult.text = "Bienvenido a tu app."
+        }
 
         binding.buttonMovies.setOnClickListener {
             val intent = Intent(container?.context, MainLibrary::class.java)
 
             startActivity(intent)
         }
-     /*   binding.buttonPokedes.setOnClickListener {
-            val navController = findNavController()
+        /*   binding.buttonPokedes.setOnClickListener {
+               val navController = findNavController()
 
-            navController.navigate(R.id.action_blankFragment_to_nav_graph)
-        }*/
+               navController.navigate(R.id.action_blankFragment_to_nav_graph)
+           }*/
         binding.buttonPokedes.setOnClickListener {
             val request = NavDeepLinkRequest.Builder
                 .fromUri("pokedex://home_pokedex".toUri())
                 .build()
-            findNavController().navigate(request)
+            findNavController().navigate(
+                request,
+                NavOptions.Builder().setPopUpTo(R.id.navigation_main, false).build()
+            )
         }
         // Inflate the layout for this fragment
         return view

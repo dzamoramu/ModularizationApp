@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".BlankFragment">
 
+    <TextView
+        android:id="@+id/textDataResult"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
+        tools:text="Hello World!"/>
+
     <Button
         android:id="@+id/buttonMovies"
         android:layout_width="200dp"

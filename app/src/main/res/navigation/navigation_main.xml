@@ -9,8 +9,20 @@
         android:id="@+id/blankFragment"
         android:name="com.example.modularizationapp.BlankFragment"
         android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action android:id="@+id/deepLinkPokedex"/>
+        tools:layout="@layout/fragment_blank">
+
+        <argument
+            android:name="infoDetail"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+
+        <deepLink
+            android:id="@+id/deepLinkHomeApp"
+            app:uri="app://home_app/{infoDetail}"
+            android:autoVerify="true"/>
+
     </fragment>
-    <include app:graph="@navigation/nav_graph"/>
+
+    <include app:graph="@navigation/nav_graph" />
 </navigation>
