@@ -1,7 +1,7 @@
-package com.example.modularizationapp.extension
+package com.example.navigation.extension
 
 import androidx.navigation.NavController
-import com.example.modularizationapp.router.Router
+import com.example.navigation.router.Router
 
 sealed class NavRouterType {
     data object Default : NavRouterType()
@@ -15,8 +15,8 @@ sealed class NavRouterType {
 
 fun NavController.navigateWithRouter(
     router: Router,
-    navRouterType: NavRouterType = NavRouterType.Default,
+    navRouterType: NavRouterType = com.example.navigation.extension.NavRouterType.Default,
     isLaunchSingleTop: Boolean = true
 ) {
-    navigate
+
 }

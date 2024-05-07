@@ -1,4 +1,4 @@
-package com.example.modularizationapp.api
+package com.example.navigation.api
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

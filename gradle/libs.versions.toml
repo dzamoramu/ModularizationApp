@@ -48,4 +48,5 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltversion" }
 safeArgs = { id = "androidx.navigation.safeargs", version.ref = "navigationFragmentKtx" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 

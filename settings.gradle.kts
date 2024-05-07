@@ -1,5 +1,8 @@
 import java.net.URI
 
+include(":navigation")
+
+
 pluginManagement {
     repositories {
         google {
